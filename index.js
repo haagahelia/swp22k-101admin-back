@@ -24,11 +24,6 @@ const knex = require('knex')({
 
 app.use(cors())
 
-let confirmations = [{
-  uuid: "00816d86eae9ee6534d0d03f",
-  pickup_time: "2022-03-01 08:22:13"
-}]
-
 app.get('/confirmations/all', (request, response) => {
   knex
     .select()
