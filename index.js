@@ -1,26 +1,10 @@
 const express = require('express');
 const dotenv = require('dotenv');
-const app = express();
-const cors = require('cors');
-
 dotenv.config();
 
-const knex = require('knex')({
-  client: process.env.DB_DRIVER_MODULE || 'mysql',
-  connection: {
-    host: process.env.DB_HOST || 'localhost',
-    port: Number(process.env.DB_POR) || 3306,
-    user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
-    database: process.env.DB_DATABASE,
-    debug: process.env.DB_DEBUG || false,
-    multipleStatements: process.env.DB_MULTIPLE_STATEMENTS || true,
-  },
-  pool: {
-    min: Number(process.env.DB_CONNECTION_POOL_MIN) || 0,
-    max: Number(process.env.DB_CONNECTION_POOL_MAX) || 7,
-  }
-})
+const app = express();
+const cors = require('cors');
+const knex = require('./src/db/knex.js')
 
 app.use(cors())
 
@@ -33,7 +17,6 @@ app.get('/confirmations/all', (request, response) => {
     })
     .catch(error => {
       console.log(error);
-
     })
 })
 
