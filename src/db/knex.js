@@ -17,5 +17,4 @@ const databaseConfigObject = {
   }
 }
 
-// initiate knex with config
 module.exports = knex(databaseConfigObject);
