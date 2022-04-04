@@ -1,5 +1,10 @@
-const confirmations = require('express').Router();
+import {
+  successHandler,
+  databaseErrorHandler
+} from '../responseHandlers/index';
 
+
+const confirmations = require('express').Router();
 const knex = require('../../src/db/knex.js')
 
 
@@ -9,9 +14,10 @@ confirmations.get('/all', (request, response) => {
     .from("signature")
     .then(data => {
       response.json(data);
+      successHandler(response, 'Operation successful');
     })
     .catch(error => {
-      console.log(error);
+      databaseErrorHandler(error, response);
     })
 })
 
@@ -22,10 +28,12 @@ confirmations.get('/:id', (request, response) => {
     .where("uuid", request.params.id)
     .then(data => {
       response.json(data);
+      successHandler(response, 'Operation successful');
     })
     .catch(error => {
-      console.log(error);
+      databaseErrorHandler(error, response);
     })
 })
 
-module.exports=confirmations
+module.exports = confirmations
+
