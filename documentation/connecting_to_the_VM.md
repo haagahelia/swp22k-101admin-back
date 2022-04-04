@@ -1,16 +1,18 @@
-# Start
+# start
 1. open Putty
   in Session tab, Host name: 195.148.22.38, Port: 22, Connection type: SSH. You may save it for further reference under any name (for example, VM)
 2. login:
   juuuser1; 
   use the corresponding password from the Teams Secret spreadsheet (column E)
-3. to open and check database:
-$ mysql -h localhost -u <username> -p ENTER 
+  
+# to open and check database:
+1. login as juuuser1 (from block 1) or continue from previous step 
+2. $ mysql -h localhost -u <username> -p ENTER 
   then enter corresponding password from Teams spreadsheet
   (possible users: admin or backend)
-4. choose the DB: db22k
-5. to quit the db: 
-quit;
+3. choose the DB: db22k
+4. to quit the db: 
+  quit;
 
 # to deploy the backend code to the VM 
   (now it's installed there, no need to do it now, just for future reference):
