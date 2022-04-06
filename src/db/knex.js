@@ -1,4 +1,4 @@
-const knex = require('knex');
+import knex from 'knex';
 
 const databaseConfigObject = {
   client: process.env.DB_DRIVER_MODULE || 'mysql',
@@ -7,7 +7,7 @@ const databaseConfigObject = {
     port: Number(process.env.DB_PORT) || 3306,
     user: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
-    database: process.env.DB_DATABASE, 
+    database: process.env.DB_DATABASE,
     debug: process.env.DB_DEBUG || false,
     multipleStatements: process.env.DB_MULTIPLE_STATEMENTS || true,
   },
@@ -15,6 +15,6 @@ const databaseConfigObject = {
     min: Number(process.env.DB_CONNECTION_POOL_MIN) || 0,
     max: Number(process.env.DB_CONNECTION_POOL_MAX) || 7,
   }
-}
+};
 
-module.exports = knex(databaseConfigObject);
+export default knex(databaseConfigObject);

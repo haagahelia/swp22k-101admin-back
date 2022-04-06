@@ -1,13 +1,14 @@
-const express = require('express');
-const dotenv = require('dotenv');
-dotenv.config();
-const routes = require( "./src/routes/routesindex.js");
+import express from 'express';
+import dotenv from 'dotenv';
+import cors from 'cors';
+import routes from './src/routes/routesindex.js';
 
+
+dotenv.config();
 const app = express();
-const cors = require('cors');
 
 app.use(cors())
-app.use( routes)
+app.use(routes)
 
 app.get('/', (request, response) => {
   response.send('Admin fullstack project')

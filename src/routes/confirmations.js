@@ -1,11 +1,12 @@
 import {
   successHandler,
   databaseErrorHandler
-} from '../responseHandlers/index';
+} from '../responseHandlers/index.js';
+import express from 'express';
+import knex from '../../src/db/knex.js';
 
+const confirmations = express.Router();
 
-const confirmations = require('express').Router();
-const knex = require('../../src/db/knex.js')
 
 
 confirmations.get('/all', (request, response) => {
@@ -35,5 +36,5 @@ confirmations.get('/:id', (request, response) => {
     })
 })
 
-module.exports = confirmations
+export default confirmations;
 

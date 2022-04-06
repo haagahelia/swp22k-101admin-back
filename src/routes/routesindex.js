@@ -1,6 +1,8 @@
-const express = require('express');
-const confirmations=require('./confirmations.js')
+import express from 'express';
+import confirmations from './confirmations.js';
 
-const routes = express.Router()
+const routes = express.Router();
 routes.use('/confirmations', confirmations)
-module.exports = routes
+
+
+export default routes;
