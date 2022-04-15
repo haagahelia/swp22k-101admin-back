@@ -7,7 +7,7 @@
   
 # to open and check database:
 1. login as juuuser1 (from block 1) or continue from previous step 
-2. $ mysql -h localhost -u <username> -p ENTER 
+2. $ mysql -h localhost -u _username_ -p ENTER 
   then enter corresponding password from Teams spreadsheet
   (possible users: admin or backend)
 3. choose the DB: db22k
