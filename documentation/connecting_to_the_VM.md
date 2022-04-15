@@ -38,7 +38,7 @@
 1. login again as juuuser1 or continue from previous step
 2. to list the contents of the root directory:
   $ls -Falls 
-3. cd <project folder>
+3. cd (project folder)
 4. npm run dev
 
 # to update the backend code:
