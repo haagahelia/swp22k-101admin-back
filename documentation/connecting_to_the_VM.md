@@ -7,7 +7,7 @@
   
 # to open and check database:
 1. login as juuuser1 (from block 1) or continue from previous step 
-2. $ mysql -h localhost -u _username_ -p ENTER 
+2. $ mysql -h localhost -u (username) -p ENTER 
   then enter corresponding password from Teams spreadsheet
   (possible users: admin or backend)
 3. choose the DB: db22k
@@ -17,8 +17,8 @@
 # to deploy the backend code to the VM 
   (now it's installed there, no need to do it now, just for future reference):
 1. login again as juuuser1 or continue from previous step
-2. git clone <git repo link> 
-3. cd <project folder>
+2. git clone (git repo link)
+3. cd (project folder)
 4. to install packages:
   $npm install
 5. to move the .env file to the VM (for PC):
@@ -31,7 +31,7 @@
   open the .env file from the remote folder and correct and save the data:
   BE_SERVER_PORT="8777"
   DB_USER="backend"
-  DB_PASSWORD=<password from the excel>
+  DB_PASSWORD=(password from the excel)
   DB_DATABASE="db22k"
 
 # to access and run the backend code:
